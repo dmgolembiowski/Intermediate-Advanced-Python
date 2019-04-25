@@ -22,4 +22,5 @@ seemingly endless array of cabinets.
     * React + SQLAlchemy
 4. Home Automation
 
-  
+# Unhelpful Coding Practices
+Disclaimer: Python, rich in its history, has given the Python community time to discover... less than ideal coding practices.
