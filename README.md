@@ -2,7 +2,7 @@
 ```
 At this point, it's assumed that you know Python well enough to have accidentally (or purposefully)
 discovered some of the languages unsafe shortcuts.
-These vehicles expose the power of Python's sharpest kitchen knives in its 
+These vehicles expose the power of Python's sharpest kitchen knives in the 
 seemingly endless array of cabinets.
 ```
 # Intermediate Topics
