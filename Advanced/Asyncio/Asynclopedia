@@ -15,7 +15,14 @@ turn. The async for and async with statements are only needed to the extent that
 for or with would “break” the nature of await in the coroutine. This distinction between asynchronicity and concurrency 
 is a key one to grasp.
 
-4. 
+4. Admittedly, the second portion of parse() is blocking, but it consists of a
+quick regex match and ensuring that the links discovered are made into absolute paths.
+
+*In this specific case, this synchronous code should be quick and inconspicuous. 
+But just remember that any line within a given coroutine will block other coroutines unless 
+that line uses yield, await, or return.
+If the parsing was a more intensive process, 
+you might want to consider running this portion in its own process with loop.run_in_executor().
 
 
 5. 
