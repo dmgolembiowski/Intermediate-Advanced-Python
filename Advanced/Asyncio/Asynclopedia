@@ -7,3 +7,15 @@
     I won’t get any further into the nuts and bolts of this feature, because it
     matters mainly for the implementation of coroutines behind the scenes, but you shouldn’t ever really
     need to use it directly yourself."
+
+3. In other words, asynchronous iterators and asynchronous generators are not
+designed to concurrently map some function over a sequence or iterator.
+They’re merely designed to let the enclosing coroutine allow other tasks to take their
+turn. The async for and async with statements are only needed to the extent that using plain 
+for or with would “break” the nature of await in the coroutine. This distinction between asynchronicity and concurrency 
+is a key one to grasp.
+
+4. 
+
+
+5. 
