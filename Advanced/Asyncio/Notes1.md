@@ -1,4 +1,5 @@
 # A more complete example
+## Originally published at: https://faculty.ai/blog/a-guide-to-using-asyncio/
 `Having coroutines yield control of the event loop is most helpful when it’s anticipated that we’re going to have to wait idle for a while until some useful work can be done. We can emulate this case with asyncio.sleep, which simply waits for a specified number of seconds before completing:`
 
 ```
