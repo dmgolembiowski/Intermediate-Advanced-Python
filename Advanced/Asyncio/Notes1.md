@@ -51,14 +51,24 @@ async def echo(string):
 
 asyncio.run(echo("Hello, world!"))
 """
-Processes are created using asyncio.create_subprocess_exec() (which is itself a coroutine and so needs to be awaited). Some of the methods on the process object are also coroutines (like .wait() in the above example).
+Processes are created using asyncio.create_subprocess_exec() 
+(which is itself a coroutine and so needs to be awaited). 
+Some of the methods on the process object are also 
+coroutines (like .wait() in the above example).
 """
 ```
 # Asynchronous HTTP with aiohttp
 ```
-Our job agent is also responsible for sending information back to a central tracking server. For example, to determine the health of the job and allow the central service to take action when a job becomes unhealthy.
+Our job agent is also responsible for sending information 
+back to a central tracking server. For example, to 
+determine the health of the job and allow the central 
+service to take action when a job becomes unhealthy.
 
-Making a network request is another I/O bound operation that fits well with a coroutine-based concurrency programming model. We used aiohttp, a popular HTTP library built on top of asyncio, to send monitoring information back to our tracking service.
+Making a network request is another I/O bound operation 
+that fits well with a coroutine-based concurrency 
+programming model. We used aiohttp, a popular HTTP library 
+built on top of asyncio, to send monitoring information 
+back to our tracking service.
 
 To make an HTTP request with aiohttp:
 ```
@@ -73,10 +83,14 @@ async def fetch_and_print(url):
 
 asyncio.run(fetch_and_print("https://python.org/"))
 """
-The above example uses an aiohttp.ClientSession as an asynchronous context manager with the async wait syntax. 
-This works much in the same way as standard context managers in Python, except that the code that governs 
-entering and exiting the context is implemented in a coroutine and so can also be executed asyncronously. 
-In this case, using the session as a context manager ensures that it is closed when we’re done with it.
+The above example uses an aiohttp.ClientSession as an 
+asynchronous context manager with the async wait syntax. 
+This works much in the same way as standard context 
+managers in Python, except that the code that governs 
+entering and exiting the context is implemented in a 
+coroutine and so can also be executed asyncronously. 
+In this case, using the session as a context manager 
+ensures that it is closed when we’re done with it.
 """
 # See the complete example at https://github.com/acroz/asyncio-example
 ```
