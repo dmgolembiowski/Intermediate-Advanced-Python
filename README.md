@@ -16,11 +16,12 @@ seemingly endless array of cabinets.
 # Advanced Topics
 1. Asyncio (Python 3.7+)
 2. Sockets and Servers
-3. Multi-language Interaction Recipes
+3. Quart Applications
+4. Multi-language Interaction Recipes
     * Jinja2 + JavaScript
     * PHP + BASH + Python
     * React + SQLAlchemy
-4. Home Automation
+5. Home Automation
 
 # Unhelpful Coding Practices
 Disclaimer: Python, rich in its history, has given the Python community time to discover... less than ideal coding practices.
