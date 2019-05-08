@@ -15,7 +15,7 @@ async def html_document(path: str) -> str:
     return page
 
 @app.route('/')
-async def render_page():
-    return await html_document("index.html")
+async def render_page(path="index.html"):
+    return await html_document(path)
 
 app.run()
