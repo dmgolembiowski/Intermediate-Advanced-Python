@@ -18,7 +18,13 @@ def reactor(host='localhost', port=9600):
     s = socket.socket()
     s.bind((host, port))
     s.listen(5)
-    s.setblocking(0)          # Make asynchronous.  Never wait on a client socket.
+    #s.setblocking(0)          # Make asynchronous.  Never wait on a client socket.
+    """ I commented out `s.setblocking(0)`  
+    because it's not immediately obvious to 
+    everyone that it's equivalent to
+    `s.setblocking(False)`
+    """
+    s.setblocking(False) # Do not let the client socket block other activity
     sessions[s] = None
     print('Server up, running, and waiting for call on %s %s' % (host, port))
     try:
