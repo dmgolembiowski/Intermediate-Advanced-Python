@@ -13,3 +13,4 @@
 >>> gertrude.__dict__
 {'shell_color': 'terminal green', 'age': 35}
 >>> 
+```
