@@ -9,21 +9,23 @@ def multimap(functions, fargs):
             functools.partial(f)
             for f in functions
     ]
-    combined = list(zip(partials, fargs))
+    combined = zip(partials, fargs)
     return combined
 
 if __name__ == '__main__':
-    import multiprocessing, time
-    
+    import multiprocessing, time, random
+    import threading
     # Placeholder functions
-    a = lambda thing: random.choice((True, False))
-    b = lambda thing: True
-    c = lambda thing: False
+    a = lambda thing: print('a:', random.choice((True, False)))
+    b = lambda thing: print('b:', True)
+    c = lambda thing: print('c:', False)
     A, B, C = (1, 'a', {"This": "Not This"})
     
-    multi_targets = multimap((a, b, c), (A, B, C))
+    multi_targets = multimap((a, b, c, a, b, c, a, b, c), (A, B, C, A, B, C, A, B, C ))
     jobs = []
     for target in multi_targets:
-        p = multiprocessing.Process(target=target[0], args=(target[1],)
+        p = threading.Thread(target=target[0], args=(target[1],))
         jobs.append(p)
         p.start()
+    for index, thread in enumerate(jobs):
+        thread.join()
